@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local PDF Reader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #4A90E2;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            width: 100%;
+            max-width: 1200px;
+        }
+        #loadPdfBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4A90E2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-right: 20px;
+        }
+        #loadPdfBtn:hover {
+            background-color: #357ABD;
+        }
+        #pdfViewer {
+            width: 100%;
+            height: 80vh;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: none; /* Initially hide the iframe */
+        }
+        @media (max-width: 600px) {
+            #pdfViewer {
+                height: 60vh;
+            }
+            h1 {
+                font-size: 20px;
+            }
+            #loadPdfBtn {
+                font-size: 14px;
+            }
+        }
+    </style>
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf_viewer.css" />
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script>       
+</head>
+<body>
+    <h1>Local PDF Reader</h1>
+    <div class="container">
+        <button id="loadPdfBtn">Load Sample PDF</button>
+        <iframe id="pdfViewer" src=""></iframe>
+    </div>
+    <script src="renderer.js"></script>
+
+</body>
+</html>

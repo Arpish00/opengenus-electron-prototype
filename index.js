@@ -1,25 +1,27 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, protocol } = require('electron');
+const path = require('path');
+const fs = require('fs');
 
-function createWindow() {
-    // Create the browser window
-    const win = new BrowserWindow({
+let mainWindow;
+
+app.on('ready', () => {
+    // Register a custom protocol to serve the PDF
+    protocol.registerFileProtocol('app', (request, callback) => {
+        const url = request.url.substr(6); // remove 'app://' from the request
+        const filePath = path.join(__dirname, 'public', url);
+        callback({ path: filePath });
+    }, (error) => {
+        if (error) console.error('Failed to register protocol', error);
+    });
+
+    mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
         webPreferences: {
-            nodeIntegration: true,
+            contextIsolation: true,
+            preload: path.join(__dirname, 'preload.js'), // Add preload.js
         },
     });
 
-    // Load OpenGenus IQ website
-    win.loadURL('https://iq.opengenus.org/');
-}
-
-// Called when Electron has finished initialization
-app.whenReady().then(createWindow);
-
-// Quit when all windows are closed
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-        app.quit();
-    }
+    mainWindow.loadFile('public/pdfviewer.html');
 });
