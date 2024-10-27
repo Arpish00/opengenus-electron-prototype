@@ -1,6 +1,5 @@
-const { contextBridge, ipcRenderer } = require('electron');
+const { contextBridge } = require('electron');
 
-contextBridge.exposeInMainWorld('electron', {
-    loadPdf: () => ipcRenderer.send('load-pdf'),
-    onPdfLoaded: (callback) => ipcRenderer.on('pdf-loaded', (event, pdfPath) => callback(pdfPath)),
+contextBridge.exposeInMainWorld('electronAPI', {
+    serverUrl: 'http://localhost:3000/sample.pdf'
 });

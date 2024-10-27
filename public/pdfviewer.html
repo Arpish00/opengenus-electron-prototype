@@ -41,6 +41,20 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             margin-right: 20px;
         }
+        #backBtn {
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #4A90E2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #backBtn:hover{
+            background-color: #357ABD;
+        }
         #loadPdfBtn:hover {
             background-color: #357ABD;
         }
@@ -63,17 +77,19 @@
             }
         }
     </style>
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf_viewer.css" />
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script>       
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf_viewer.css" />
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script> 
 </head>
 <body>
     <h1>Local PDF Reader</h1>
     <div class="container">
-        <button id="loadPdfBtn">Load Sample PDF</button>
-        <iframe id="pdfViewer" src=""></iframe>
-    </div>
+        <button id="loadPdfBtn">Load PDF</button>
+        <button id="backBtn" style="display: none;">Back</button>
+        <div id="pdfContainer" style="width: 100%; height: 100vh; overflow: auto;"></div>
+            </div>
     <script src="renderer.js"></script>
+    
 
 </body>
 </html>
