@@ -11,26 +11,19 @@
             background-color: #f4f4f9;
             color: #333;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
             height: 100vh;
-            padding: 20px;
         }
-        h1 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            color: #4A90E2;
-        }
-        .container {
+        .sidebar {
             display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            width: 100%;
-            max-width: 1200px;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            background-color: #ffffff; /* White background for sidebar */
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Shadow effect */
+            width: 200px; /* Fixed width for sidebar */
         }
-        #loadPdfBtn {
-            padding: 10px 20px;
+        button {
+            padding: 10px;
             font-size: 16px;
             color: white;
             background-color: #4A90E2;
@@ -38,58 +31,43 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-right: 20px;
+            margin-bottom: 10px; /* Space between buttons */
         }
-        #backBtn {
-            padding: 10px 20px;
-            font-size: 16px;
-            color: white;
-            background-color: #4A90E2;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        #backBtn:hover{
+        button:hover {
             background-color: #357ABD;
         }
-        #loadPdfBtn:hover {
-            background-color: #357ABD;
-        }
-        #pdfViewer {
-            width: 100%;
-            height: 80vh;
+        iframe {
+            flex-grow: 1; /* Take remaining space */
             border: none;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            display: none; /* Initially hide the iframe */
-        }
-        @media (max-width: 600px) {
-            #pdfViewer {
-                height: 60vh;
-            }
-            h1 {
-                font-size: 20px;
-            }
-            #loadPdfBtn {
-                font-size: 14px;
-            }
+            display: none; /* Initially hidden */
         }
     </style>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf_viewer.css" />
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script> 
 </head>
 <body>
-    <h1>Local PDF Reader</h1>
-    <div class="container">
+    <div class="sidebar">
         <button id="loadPdfBtn">Load PDF</button>
         <button id="backBtn" style="display: none;">Back</button>
-        <div id="pdfContainer" style="width: 100%; height: 100vh; overflow: auto;"></div>
-            </div>
-    <script src="renderer.js"></script>
-    
+    </div>
+    <iframe id="pdfViewer"></iframe>
 
+    <script>
+        document.getElementById('loadPdfBtn').addEventListener('click', function () {
+            const pdfViewer = document.getElementById('pdfViewer');
+            const backBtn = document.getElementById('backBtn');
+
+            // Load the PDF using the built-in browser PDF viewer
+            const pdfUrl = 'app://sensors-23-06434.pdf'; // Use your custom protocol
+            pdfViewer.src = pdfUrl; // Set the source of the iframe to the PDF
+            pdfViewer.style.display = 'block'; // Show the iframe
+            backBtn.style.display = 'inline-block'; // Show the back button
+        });
+
+        document.getElementById('backBtn').addEventListener('click', function () {
+            const pdfViewer = document.getElementById('pdfViewer');
+            pdfViewer.style.display = 'none'; // Hide the iframe
+            this.style.display = 'none'; // Hide the back button
+        });
+    </script>
 </body>
 </html>
