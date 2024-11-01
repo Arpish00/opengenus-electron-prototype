@@ -51,23 +51,7 @@
     </div>
     <iframe id="pdfViewer"></iframe>
 
-    <script>
-        document.getElementById('loadPdfBtn').addEventListener('click', function () {
-            const pdfViewer = document.getElementById('pdfViewer');
-            const backBtn = document.getElementById('backBtn');
+    <script src="renderer.js"></script> 
 
-            // Load the PDF using the built-in browser PDF viewer
-            const pdfUrl = 'app://sensors-23-06434.pdf'; // Use your custom protocol
-            pdfViewer.src = pdfUrl; // Set the source of the iframe to the PDF
-            pdfViewer.style.display = 'block'; // Show the iframe
-            backBtn.style.display = 'inline-block'; // Show the back button
-        });
-
-        document.getElementById('backBtn').addEventListener('click', function () {
-            const pdfViewer = document.getElementById('pdfViewer');
-            pdfViewer.style.display = 'none'; // Hide the iframe
-            this.style.display = 'none'; // Hide the back button
-        });
-    </script>
 </body>
 </html>
