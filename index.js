@@ -15,7 +15,7 @@ app.on('ready', () => {
         if (pdfBuffer) {
             callback({ mimeType: 'application/pdf', data: pdfBuffer });
         } else {
-            callback({ error: -6 }); // FILE_NOT_FOUND equivalent
+            callback({ error: -6 }); 
         }
     }, (error) => {
         if (error) console.error('Failed to register protocol', error);
@@ -27,7 +27,7 @@ app.on('ready', () => {
         webPreferences: {
             contextIsolation: false, // Allow access to Node.js features
             nodeIntegration: true,    // Enable Node.js in the renderer process
-            preload: path.join(__dirname, 'preload.js'), // Add preload.js if needed
+            preload: path.join(__dirname, 'preload.js'), 
         },
     });
 
