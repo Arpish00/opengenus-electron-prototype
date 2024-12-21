@@ -4,7 +4,7 @@ This version combines a custom-built PDF reader using PDF.js with a lightweight 
 
 What’s Inside:
 
-- A custom PDF reader built with PDF.js.
+- A PDF reader built with PDF.js.
 - PDFs served dynamically from a pdf/ folder using an Express server.
 
 
