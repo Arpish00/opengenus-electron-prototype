@@ -9,4 +9,4 @@ What’s Inside:
 
 
 ### Screenshot
-![Screenshot](screenshots/POC_V3_CustomReaderWithServer/CustomReaderWithServer)
+![Screenshot](../screenshots/POC_V3_CustomReaderWithServer/CustomReaderWithServer)

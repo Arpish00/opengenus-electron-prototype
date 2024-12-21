@@ -4,4 +4,4 @@ This is the first version of the Electron Desktop app that opens the OpenGenus I
 
 
 ### Screenshot
-![Screenshot](screenshots/POC_V1_WebsiteLoader/WebsiteLoader.png.png)
+![Screenshot](../screenshots/POC_V1_WebsiteLoader/WebsiteLoader.png.png)
