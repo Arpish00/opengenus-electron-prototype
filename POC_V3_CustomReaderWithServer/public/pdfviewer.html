@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Viewer</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 200px;
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            flex-shrink: 0;
+        }
+        .sidebar button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #444;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+        }
+        .sidebar button:hover {
+            background: #555;
+        }
+        #viewer {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #f0f0f0;
+            position: relative;
+            background-color: #ccc; 
+            color: #666; 
+            font-size: 24px; 
+            text-align: center; 
+        }
+        #pdfContainer {
+            width: 100%;
+            height: 100%;
+            display: none; /* Initially hidden */
+        }
+        #viewer.hidden {
+            display: none; /* Hide the viewer div */
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <button id="loadPdfBtn">Load PDF</button>
+        <button id="backBtn" style="display: none;">Back</button>
+    </div>
+    <div id="viewer">
+        <div id="placeholder">PDF Viewer Placeholder</div>
+        <div id="pdfContainer"></div>
+    </div>
+    <script src="renderer.js"></script>
+</body>
+</html>

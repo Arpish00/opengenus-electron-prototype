@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local PDF Reader</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            height: 100vh;
+        }
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px;
+            background-color: #ffffff; 
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); 
+            width: 200px; 
+        }
+        button {
+            padding: 10px;
+            font-size: 16px;
+            color: white;
+            background-color: #4A90E2;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-bottom: 10px; 
+        }
+        button:hover {
+            background-color: #357ABD;
+        }
+        iframe {
+            flex-grow: 1; 
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: none; 
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <button id="loadPdfBtn">Load PDF</button>
+        <button id="backBtn" style="display: none;">Back</button>
+    </div>
+    <iframe id="pdfViewer"></iframe>
+
+    <script src="renderer.js"></script> 
+
+</body>
+</html>
