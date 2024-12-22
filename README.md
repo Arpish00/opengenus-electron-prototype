@@ -32,4 +32,4 @@ npm start
 - Explored loading local html and introduced a custom protocol (internal-pdf://) to load and display PDFs using the built-in browser PDF viewer.
 
 3. POC_V3_CustomReaderWithServer
-- Integrated a custom-built PDF reader (based on PDF.js) (to diable save and print functionality) and a local server to serve PDF files dynamically.
+- Integrated a PDF reader (based on PDF.js) (to diable save and print functionality) and a local server to serve PDF files dynamically.
