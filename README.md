@@ -2,9 +2,6 @@
 
 This repository contains multiple prototypes created to explore features and functionalities for an Electron-based desktop application. These are proof-of-concept implementations for exploration.
 
-### Screenshot
-![Screenshot](screenshots/POC_V1_WebsiteLoader/WebsiteLoader.png.png)
-
 ##### Steps to run the Electron app:
 
 Clone the Repository:
