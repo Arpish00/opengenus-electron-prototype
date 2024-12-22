@@ -9,4 +9,4 @@ What’s Inside:
 
 
 ### Screenshot
-![Screenshot](screenshots/POC_V2_BuiltInReader/BuiltInReader.png)
+![Screenshot](../screenshots/POC_V2_BuiltInReader/BuiltInReader.png)
