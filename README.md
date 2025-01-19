@@ -39,7 +39,7 @@ npm start
 - Implements decryption of each chunk during runtime to render PDF pages securely.
 
 5. POC_V4.5_HTMLConversion
-- Explores possibilty Converts PDF pages into HTML files using python.
+- Explores possibility of Converts PDF pages into HTML files using python.
 
 
 
