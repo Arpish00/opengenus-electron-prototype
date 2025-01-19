@@ -1,0 +1,26 @@
+{
+  "name": "electron-prototype",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^33.0.2"
+  },
+  "dependencies": {
+    "keytar": "^7.9.0",
+    "pdf-lib": "^1.17.1",
+    "pdfjs-dist": "^4.7.76"
+  }
+}

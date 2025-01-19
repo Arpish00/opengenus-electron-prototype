@@ -33,3 +33,13 @@ npm start
 
 3. POC_V3_CustomReaderWithServer
 - Integrated a PDF reader (based on PDF.js) (to disable save and print functionality) and a local server to serve PDF files dynamically.
+
+4. POC_V4_Encryption
+- Explores encrypting PDF files into smaller chunks and decoding them on-demand.
+- Implements decryption of each chunk during runtime to render PDF pages securely.
+
+5. POC_V4.5_HTMLConversion
+- Explores possibilty Converts PDF pages into HTML files using python.
+
+
+
